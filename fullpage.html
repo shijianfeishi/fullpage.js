@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./jquery.fullPage.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.min.js"></script>
+    <style>
+        .section {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #fff;
+        }
+        
+        #index .section:nth-child(1) {
+            background: green;
+        }
+        
+        #index .section:nth-child(2) {
+            background: yellowgreen;
+        }
+        
+        #index .section:nth-child(3) {
+            background: orangered;
+        }
+        
+        #index .section:last-child {
+            padding: 100px;
+            background: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="index">
+        <div class="section">第一屏</div>
+        <div class="section">第二屏</div>
+        <div class="section">第三屏</div>
+        <div class="section fp-auto-height">最后一屏</div>
+    </div>
+    <script>
+        new fullpage('#index', {
+            scrollingSpeed: 800, //滚动的时间
+            afterLoad: function(index) {
+                console.log(index);
+            }
+        });
+    </script>
+</body>
+
+</html>
